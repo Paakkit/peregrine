@@ -32,7 +32,7 @@ def dump_tracking_results_for_analysis(output_file, track_results):
       filename = output_file
 
     with open(filename, 'w') as f1:
-      f1.write("IF,doppler_phase,carr_doppler,code_phase,code_freq,"
+      f1.write("IF,carr_phase_acc,doppler_phase,carr_doppler,code_phase,code_freq,"
                "CN0,E_I,E_Q,P_I,P_Q,L_I,L_Q,"
                "lock_detect_outp,lock_detect_outo,"
                "lock_detect_pcount1,lock_detect_pcount2,"
@@ -40,6 +40,7 @@ def dump_tracking_results_for_analysis(output_file, track_results):
                "code_phase_acc\n")
       for i in range(len(track_results[j].carr_phase)):
         f1.write("%s," % track_results[j].IF)
+        f1.write("%s," % track_results[j].carr_phase_acc[i])
         f1.write("%s," % track_results[j].carr_phase[i])
         f1.write("%s," % (track_results[j].carr_freq[i] -
                           track_results[j].IF))

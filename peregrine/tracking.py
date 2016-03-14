@@ -241,7 +241,7 @@ def track(samples, channels,
         code_bw=loop_filter_params['code_bw'],
         code_zeta=loop_filter_params['code_zeta'],
         code_k=loop_filter_params['code_k'],
-        carr_to_code=0, # the provided code frequency accounts for Doppler
+        carr_to_code=1540, # the provided code frequency accounts for Doppler
         carr_freq = chan.doppler,
         carr_bw=loop_filter_params['carr_bw'],
         carr_zeta=loop_filter_params['carr_zeta'],
