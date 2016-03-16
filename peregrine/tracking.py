@@ -223,7 +223,7 @@ def track(samples, channels,
     cn0_est = swiftnav.track.CN0Estimator(
         bw=1e3/coherent_ms,
         cn0_0=cn0_0,
-        cutoff_freq=10,
+        cutoff_freq=1,
         loop_freq=loop_filter_params["loop_freq"]
     )
 
@@ -289,7 +289,7 @@ def track(samples, channels,
                        lo = lock_detect_params["lo"]);
           cn0_est = swiftnav.track.CN0Estimator(bw=1e3 / stage2_coherent_ms,
                                                 cn0_0=track_result.cn0[i - 1],
-                                                cutoff_freq=10,
+                                                cutoff_freq=1,
                                                 loop_freq=1e3 / stage2_coherent_ms)
 
         coherent_iter = coherent_ms
